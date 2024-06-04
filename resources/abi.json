@@ -1,0 +1,251 @@
+[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "attendances",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "centralizedId",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "employeeName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "checkIn",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "checkOut",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "date",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "centralizedId",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "employeeName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "checkIn",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "checkOut",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "date",
+				"type": "string"
+			}
+		],
+		"name": "create",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "centralizedId",
+				"type": "string"
+			}
+		],
+		"name": "deleteAttendance",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "centralizedId",
+				"type": "string"
+			}
+		],
+		"name": "findWithCentralizedID",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "centralizedId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "employeeName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "checkIn",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "checkOut",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "date",
+						"type": "string"
+					}
+				],
+				"internalType": "struct AttendancesContract.Attendance",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "nextId",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "centralizedId",
+				"type": "string"
+			}
+		],
+		"name": "read",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "centralizedId",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "employeeName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "checkIn",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "checkOut",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "date",
+				"type": "string"
+			}
+		],
+		"name": "updateAttendance",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]

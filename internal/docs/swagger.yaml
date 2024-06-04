@@ -1,0 +1,161 @@
+basePath: /
+definitions:
+  entity.Action:
+    properties:
+      employee_id:
+        type: string
+      id:
+        type: string
+      memo:
+        type: string
+      place_id:
+        type: string
+      status:
+        type: string
+      type:
+        enum:
+        - checkin
+        - checkout
+        type: string
+    required:
+    - place_id
+    type: object
+  entity.Attendance:
+    properties:
+      check_in_time:
+        type: string
+      check_out_time:
+        type: string
+      date:
+        type: string
+      employee_id:
+        type: string
+      id:
+        type: string
+      over_time:
+        type: string
+      status:
+        type: string
+      total_hour:
+        type: string
+    required:
+    - employee_id
+    type: object
+  entity.Employee:
+    properties:
+      department:
+        type: string
+      first_name:
+        type: string
+      id:
+        type: string
+      last_name:
+        type: string
+      position:
+        type: string
+      status:
+        type: string
+    type: object
+info:
+  contact:
+    email: trisnm102@gmail.com
+    name: API Support
+  description: A employee attandance management service API in Go using Gin framework..
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Interview Be Earning API
+  version: "1.0"
+paths:
+  /admin/employees:
+    post:
+      consumes:
+      - application/json
+      description: Create New Employee
+      parameters:
+      - description: Create an employee
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/entity.Employee'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entity.Employee'
+        "500":
+          description: Internal Server Error
+      security:
+      - ApiKeyAuth: []
+      summary: Create New Employee
+      tags:
+      - employee
+  /v1/employees/{employee_id}/actions:
+    post:
+      consumes:
+      - application/json
+      description: User Creates Action
+      parameters:
+      - description: Employee ID
+        in: path
+        name: employee_id
+        required: true
+        type: string
+      - description: employee creates an action
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/entity.Action'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entity.Action'
+        "500":
+          description: Internal Server Error
+      security:
+      - ApiKeyAuth: []
+      summary: User Creates Action
+      tags:
+      - employee
+  /v1/employees/{employee_id}/attendances:
+    get:
+      consumes:
+      - application/json
+      description: User Gets Attendance List
+      parameters:
+      - description: Employee ID
+        in: path
+        name: employee_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/entity.Attendance'
+            type: array
+        "500":
+          description: Internal Server Error
+      security:
+      - ApiKeyAuth: []
+      summary: User Gets Attendance List
+      tags:
+      - employee
+securityDefinitions:
+  ApiKeyAuth:
+    description: Description for what is this security definition being used
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
